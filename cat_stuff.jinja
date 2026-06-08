@@ -1,5 +1,5 @@
 <p style="text-align: center;">
-<p style="text-align: start; font-family: monospace;">
+<p style="text-align: start; line-height: 3em; font-family: monospace;">
 <small> </small><br>
 💩 {% set waste = states('sensor.litter_robot_5_waste_drawer') | float(0) %}
 {% if waste >= 70 %}
@@ -32,7 +32,7 @@
 <br>
 
 🍽️ {% set food = states('binary_sensor.granary_smart_feeder_1_food_status') %}
-{% if food == 'ok' %}
+{% if food == 'off' %}
 <font color="#4CAF50"><b>OK</b></font>
 {% else %}
 <font color="#F44336"><b>LOW</b></font> ⚠️
