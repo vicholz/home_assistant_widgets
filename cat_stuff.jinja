@@ -1,5 +1,6 @@
 <p style="text-align: center;">
-<p style="text-align: start; line-height: 2.5em; font-family: monospace;">
+<p style="text-align: start; font-family: monospace;">
+<small> </small><br>
 💩 {% set waste = states('sensor.litter_robot_5_waste_drawer') | float(0) %}
 {% if waste >= 70 %}
 <font color="#F44336"><b>{{ '%3d' | format(waste) }}%</b></font> ⚠️
