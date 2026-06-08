@@ -1,6 +1,6 @@
-<span style="font-family: monospace;">
-💩
-{% set waste = states('sensor.litter_robot_5_waste_drawer') | float(0) %}
+<div style="text-align: center;">
+<span style="font-family: monospace; display: inline-block; text-align: left;">
+💩 {% set waste = states('sensor.litter_robot_5_waste_drawer') | float(0) %}
 {% if waste >= 70 %}
 <font color="#F44336"><b>{{ '%3d' | format(waste) }}%</b></font> ⚠️
 {% elif waste >= 40 %}
@@ -10,8 +10,7 @@
 {% endif %}
 <br>
 
-🏖️
-{% set litter = states('sensor.litter_robot_5_litter_level') | float(0) %}
+🏖️ {% set litter = states('sensor.litter_robot_5_litter_level') | float(0) %}
 {% if litter >= 70 %}
 <font color="#4CAF50"><b>{{ '%3d' | format(litter) }}%</b></font>
 {% elif litter >= 40 %}
@@ -19,9 +18,9 @@
 {% else %}
 <font color="#F44336"><b>{{ '%3d' | format(litter) }}%</b></font> ⚠️
 {% endif %}
+<br>
 
-💧
-{% set water = states('sensor.dockstream_smart_fountain_remaining_water_2') | float(0) %}
+💧 {% set water = states('sensor.dockstream_smart_fountain_remaining_water_2') | float(0) %}
 {% if water >= 70 %}
 <font color="#4CAF50"><b>{{ '%3d' | format(water) }}%</b></font>
 {% elif water >= 20 %}
@@ -29,12 +28,13 @@
 {% else %}
 <font color="#F44336"><b>{{ '%3d' | format(water) }}%</b></font> ⚠️
 {% endif %}
+<br>
 
-🍽️
-{% set food = states('binary_sensor.granary_smart_feeder_1_food_status') %}
+🍽️ {% set food = states('binary_sensor.granary_smart_feeder_1_food_status') %}
 {% if food == 'OK' %}
 <font color="#4CAF50"><b>{{ food }}</b></font>
 {% else %}
 <font color="#F44336"><b>{{ food }}</b></font> ⚠️
 {% endif %}
 </span>
+</div>
