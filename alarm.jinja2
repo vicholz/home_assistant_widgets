@@ -1,0 +1,11 @@
+{% if is_state("alarm_control_panel.alarm", "armed_away") -%}
+<font color="#4CAF50"><ha-icon icon="mdi:lock"></ha-icon></font>
+{%- else -%}
+<font color="#F44336"><ha-icon icon="mdi:lock-open"></ha-icon></font>
+{%- endif %}
+<br>-<br>
+{% if is_state("binary_sensor.doors_and_windows", "off") -%}
+<font color="#4CAF50"><ha-icon icon="mdi:door-closed"></ha-icon></font>
+{%- else -%}
+<font color="#F44336"><ha-icon icon="mdi:door-open"></ha-icon></font>
+{%- endif %}
