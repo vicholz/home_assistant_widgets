@@ -32,10 +32,10 @@
 <br>
 
 🍽️ {% set food = states('binary_sensor.granary_smart_feeder_1_food_status') %}
-{% if food == 'OK' %}
-<font color="#4CAF50"><b>{{ food }}</b></font>
+{% if food == 'ok' %}
+<font color="#4CAF50"><b>OK</b></font>
 {% else %}
-<font color="#F44336"><b>{{ food }}</b></font> ⚠️
+<font color="#F44336"><b>LOW</b></font> ⚠️
 {% endif %}
 </p>
 </p>
