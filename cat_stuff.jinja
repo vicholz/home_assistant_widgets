@@ -27,6 +27,7 @@
 {% else %}
 <font color="#F44336"><b>LOW</b></font> ⚠️
 {% endif %}
+<br>
 
 💧 {% set water = states('sensor.dockstream_smart_fountain_remaining_water_2') | float(0) %}
 {% if water >= 70 %}
@@ -36,25 +37,25 @@
 {% else %}
 <font color="#F44336"><b>{{ '%3d' | format(water) }}%</b></font> ⚠️
 {% endif %}
+<br>
 
-🫧 {% set water_days_remaining = states('sensor.dockstream_smart_fountain_remaining_cleaning_days') | float(0) %}
+🫧 {% set water_days_remaining = states('sensor.dockstream_smart_fountain_remaining_cleaning_days') %}
 {% if water_days_remaining >= 7 %}
-<font color="#4CAF50"><b>{{ '%3d' | format(water) }}%</b></font>
+<font color="#4CAF50"><b>{{ water_days_remaining }}%</b></font>
 {% elif water_days_remaining >= 3 %}
-<font color="#FF9800"><b>{{ '%3d' | format(water) }}%</b></font>
+<font color="#FF9800"><b>{{ water_days_remaining }}%</b></font>
 {% else %}
-<font color="#F44336"><b>{{ '%3d' | format(water) }}%</b></font> ⚠️
+<font color="#F44336"><b>{{ water_days_remaining }}%</b></font> ⚠️
 {% endif %}
+<br>
 
-🧽 {% set filter_days_remaining = states('sensor.dockstream_smart_fountain_remaining_filter_day') | float(0) %}
+🧽 {% set filter_days_remaining = states('sensor.dockstream_smart_fountain_remaining_filter_day') %}
 {% if filter_days_remaining >= 7 %}
-<font color="#4CAF50"><b>{{ '%3d' | format(water) }}%</b></font>
+<font color="#4CAF50"><b>{{ filter_days_remaining }}%</b></font>
 {% elif filter_days_remaining >= 3 %}
-<font color="#FF9800"><b>{{ '%3d' | format(water) }}%</b></font>
+<font color="#FF9800"><b>{{ filter_days_remaining }}%</b></font>
 {% else %}
-<font color="#F44336"><b>{{ '%3d' | format(water) }}%</b></font> ⚠️
+<font color="#F44336"><b>{{ filter_days_remaining }}%</b></font> ⚠️
 {% endif %}
-<br>
-<br>
 </p>
 </p>
